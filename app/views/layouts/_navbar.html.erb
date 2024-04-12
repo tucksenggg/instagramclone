@@ -25,13 +25,21 @@
       <div class="dropdown">
         <a class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <% if current_user && current_user.profile_pic.attached? %>
-            <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded-circle", style:"width: 10%" %>
+            <%= image_tag current_user.profile_pic, class: "img-thumbnail rounded-circle", style:"width: 3rem; height: 3rem" %>
           <% else %>
             <%= image_tag 'profile_pic.jpg', class: "img-thumbnail rounded-circle", style:"width: 2rem" %>
           <% end %>
         </a>
         <ul class="dropdown-menu">
-          <%= button_to 'Log out', destroy_user_session_path, class: "dropdown-item", method: :delete%>
+          <li>
+            <%= link_to 'Profile', user_path(current_user), class: "dropdown-item", method: :delete%>
+          </li>
+          <li>
+            <%= link_to 'Settings', edit_user_registration_path, class: "dropdown-item", method: :delete%>
+          </li>
+          <li>
+            <%= button_to 'Log out', destroy_user_session_path, class: "dropdown-item", method: :delete%>
+          </li>
         </ul>
       </div>
 

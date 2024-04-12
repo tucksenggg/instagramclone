@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
+    redirect_to root_path
     @posts = Post.all
   end
 
@@ -49,6 +50,7 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
+    return if current_user != @post.user
     @post.destroy!
 
     respond_to do |format|
