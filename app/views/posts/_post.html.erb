@@ -38,7 +38,7 @@
 
           <% post.images.each_with_index do |img, index| %>
             <div class="carousel-item <%= index==0 ? "active" : "" %>" style="height: 25rem" >
-              <%= image_tag img, class:"d-block w-100", style: "max-height: 100%; object-fit: cover" %>
+              <%= cl_image_tag img.key, class:"d-block w-100", style: "max-height: 100%; object-fit: cover" %>
             </div>
           <% end %>
         </div>
