@@ -74,3 +74,4 @@ gem 'bootstrap'
 gem "devise"
 gem "font-awesome-sass", "~> 6.5.2"
 gem 'activestorage-validator'
+gem "dotenv-rails"
